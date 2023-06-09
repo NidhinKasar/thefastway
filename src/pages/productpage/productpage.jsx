@@ -28,7 +28,7 @@ const Productpage = () =>  {
 
   return (
       <>
-      <Header />
+      <Header catergoryFocus={() => console.log('Focus')}/>
       <div style={{display:'flex'}}>
         <Card className="my-3 p-3 rounded" style={{ width: '50%', height: '50%', justifyContent:'center' }}>
           {images && images.length > 0 && <Slider {...settings}>

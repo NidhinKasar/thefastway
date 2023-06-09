@@ -6,10 +6,19 @@ export default function Products({data}) {
 
     let testArray = data && data.length > 0 && data.map((item) => { return item.category })
 
-    const uniqueArray = testArray && testArray.length > 0 && testArray.filter((value, index, self) => {
+ const uniqueArray = testArray && testArray.length > 0 && testArray.filter((value, index, self) => {
         return self.indexOf(value) === index;
-    });
+ });
+    
+ let modalTestArray = data && data.length > 0 && data.map((item) => { return item.brand })
 
+ const uniqueModalArray = modalTestArray && modalTestArray.length > 0 && modalTestArray.filter((value, index, self) => {
+    return self.indexOf(value) === index;
+});
+    
+    localStorage.setItem('categories', JSON.stringify(uniqueArray))
+    localStorage.setItem('model', JSON.stringify(uniqueModalArray))
+    
     const [cartData, setCartData] = useState([])
 
     const selectData = (type) => {
@@ -49,4 +58,6 @@ export default function Products({data}) {
             })}
         </>
     )
+    
 }
+

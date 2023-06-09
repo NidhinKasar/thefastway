@@ -1,14 +1,15 @@
 import React from 'react'
 import { Container, Navbar, Nav } from 'react-bootstrap'
 import { useEffect } from 'react'
+import Dropdown from './dropdown'
 
-export default function Header() {
- 
+
+export default function Header({onHover}) {
+
+
     const catergoryFocus = (event) => {
-        
-        
+        onHover()
     }
-    
 
     return (
             // responsive
@@ -19,7 +20,6 @@ export default function Header() {
                     Categories
                 </span>
                 <span className='category' onMouseOver={catergoryFocus}>
-                    Filter
                 </span>
                     <Nav className="">
                         <Nav.Link href="/home">Home</Nav.Link>
