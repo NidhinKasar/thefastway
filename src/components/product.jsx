@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import {Row , Col} from 'react-bootstrap'
 import ProductCards from './productsCards';
 import { useDispatch } from 'react-redux';
+import { cart } from '../store/cartReducer';
 
 export default function Products({data}) {
 
@@ -33,20 +34,18 @@ export default function Products({data}) {
             cartData.push(item)
         }
         setCartData([...cartData])
+       // let length = cartData.length;
         localStorage.setItem('cartItem', cartData.length)
-        dispatch({
-            type: 'cart',
-            payload: cartData.length
-        })
+        dispatch(cart({
+            payload: cartData.length,
+            type: 'market/cart'
+        }))
     }
 
     const buyNow = (item) => {
         console.log("Bought", item);
     }
 
-    useEffect(() => {
-    console.log("cartDtaa", cartData);
-    }, [cartData])
     
 
     return (

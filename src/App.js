@@ -6,7 +6,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Productpage from './pages/productpage/productpage';
 import Cart from './pages/cart/cart';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import store from './store/toolskitStore';
 
 
 function App() {

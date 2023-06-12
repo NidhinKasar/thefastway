@@ -8,10 +8,10 @@ function Cart() {
     const dispatch = useDispatch()
     const clearCart = () => {
         localStorage.setItem('cartItem', 0)
-        dispatch({
-            type: 'cart',
-            payload: 0
-        })
+        // dispatch({
+        //     type: 'cart',
+        //     payload: 0
+        // })
   }
 
   return (

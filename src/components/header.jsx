@@ -10,13 +10,13 @@ export default function Header({ onHover, cartNumber }) {
     const [count, setCount] = useState(0)
     
     const selectorValue = useSelector((state) => {
-        return state
-      })
+        return state.market.payload
+    })
+    console.log("selectorValue", selectorValue);
 
     useEffect(() => {
         const cartCount = localStorage.getItem('cartItem') || 0;
 
-        console.log("keri");
         if (cartCount || cartCount === 0) {
             setCount(cartCount)
         }
