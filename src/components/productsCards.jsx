@@ -14,7 +14,7 @@ export default function ProductCards({ item, onClick, buyNow, key }) {
         <>
             <Card className="my-3 p-3 rounded" style={{ width: '18rem' }}>
             <Link to={`/product`} onClick={() => Clicked(item)}>
-                <Card.Img variant="top" src={item.thumbnail} />
+                <Card.Img variant="top" alt='' src={item.thumbnail} />
             </Link>
                 <Card.Body>
                     <Card.Title><strong>{item.brand}</strong></Card.Title>
