@@ -3,3 +3,11 @@
 .category {
     margin-right: -66% !important;
 }
+
+.homecart{
+    display: flex !important;
+    justify-content: space-evenly !important;
+    width: 500px !important;
+    list-style-type: none !important;
+    padding-left: 500px !important;
+}

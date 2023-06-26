@@ -29,14 +29,12 @@ export default function Header({ onHover, cartNumber }) {
     return (
             // responsive
             <Navbar bg="dark" variant="dark" sticky="top" expand="lg" collapseOnSelect>  
-                <Container>
-                <Navbar.Brand href="/home">The Fast Way</Navbar.Brand>
-                    <Nav className="">
+                <Navbar.Brand href="/">The Fast Way</Navbar.Brand>
+                    <div className="navbar homecart">
                         <Link to="/home">Home</Link>
                         <Link to="/cart">Cart <Icon icon={'mdi:cart'} /> {selectorValue}</Link>
-                </Nav>
+                    </div>
                 
-                </Container>
             </Navbar>
 
         
