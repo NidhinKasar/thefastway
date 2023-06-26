@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Dropdown from './dropdown'
 import { Icon } from '@iconify/react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function Header({ onHover, cartNumber }) {
     
@@ -31,8 +32,8 @@ export default function Header({ onHover, cartNumber }) {
                 <Container>
                 <Navbar.Brand href="/home">The Fast Way</Navbar.Brand>
                     <Nav className="">
-                        <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/cart">Cart <Icon icon={'mdi:cart'} /> {selectorValue}</Nav.Link>
+                        <Link to="/home">Home</Link>
+                        <Link to="/cart">Cart <Icon icon={'mdi:cart'} /> {selectorValue}</Link>
                 </Nav>
                 
                 </Container>
