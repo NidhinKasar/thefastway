@@ -3,6 +3,7 @@ import {Row , Col} from 'react-bootstrap'
 import ProductCards from './productsCards';
 import { useDispatch } from 'react-redux';
 import { cart } from '../store/cartReducer';
+import './ProductCards.css';
 
 export default function Products({data}) {
 
@@ -46,23 +47,24 @@ export default function Products({data}) {
         console.log("Bought", item);
     }
 
-    
-
     return (
         <>
-            {uniqueArray && uniqueArray.length > 0 && uniqueArray.map((item) => {
-                return(
-                 <Row>
-                <h4 style={{marginLeft:'40rem'}}>{item}</h4>
-                 {selectData(item) && selectData(item).length > 0 && selectData(item).map((value, key)=>(
-                     <Col sm={12} md={8} lg={6} xl={3}>
-                         {/* <p>{item.name}</p> */}
-                         <ProductCards item={value} onClick={addToCart} key={key} buyNow={buyNow} />
-                     </Col>
-                 ))}
-                    </Row>   
-                )
-            })}
+
+                {uniqueArray && uniqueArray.length > 0 && uniqueArray.map((item) => {
+                    
+                    return (
+                        <div className='product-cards'>
+                            <h4 className='categoryTitle'>{item && item.toUpperCase()}</h4>
+                        { selectData(item) && selectData(item).length > 0 && selectData(item).map((value, key) =>
+                        (
+                            <ProductCards item={value} onClick={addToCart} key={key} buyNow={buyNow} />
+                        )
+                        )}
+                         </div>
+                        )   
+                    })
+                    }
+                    
         </>
     )
     

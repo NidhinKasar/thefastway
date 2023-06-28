@@ -1,39 +1,26 @@
 import React from 'react'
-import { Card , Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+import './ProductCards.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function ProductCards({ item, onClick, buyNow, key }) {
     
+    const navigate = useNavigate();
 
     const Clicked = (props) => {
-      localStorage.setItem('productData', JSON.stringify(props))
-  }
+        localStorage.setItem('productData', JSON.stringify(props))
+        navigate('/product')
+    }
+    
+    console.log(item)
 
     return (
-        <>
-            <Card className="my-3 p-3 rounded" style={{ width: '18rem' }}>
-            <Link to={`/product`} onClick={() => Clicked(item)}>
-                <Card.Img variant="top" alt='' src={item.thumbnail} />
-            </Link>
-                <Card.Body>
-                    <Card.Title><strong>{item.brand}</strong></Card.Title>
-                    <Card.Text>
-                        <strong>{item.title}</strong>
-                    </Card.Text>
-                    <Card.Text>
-                        <strong>Price : {item.price}</strong>
-                    </Card.Text>
-                    <Card.Text>
-                        <strong>{item.description}</strong>
-                    </Card.Text>
+      <div className="product-card" onClick={()=> Clicked(item)}>
+        <img src={item.thumbnail} alt="Product 1" className="product-image" />
+            <h3 className="product-title">{item.title}</h3>
+            <p className="product-description">{item.description}</p>
+            <div className="product-price">Price: ${item.price}</div>
+        <button onClick={() => onClick(item)} className="add-to-cart-button">Add to Cart</button>
+      </div>
 
-                    <Button variant="primary" onClick={() => onClick(item)}>Add to Cart</Button>
-                    <br></br>
-                    <br></br>
-                    <Button variant="primary" onClick={() => buyNow(item)}>Buy Now</Button>
-                </Card.Body>
-            </Card>
-        </>
     )
 }

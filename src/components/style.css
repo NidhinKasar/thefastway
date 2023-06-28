@@ -1,13 +1,69 @@
 
 
 .category {
-    margin-right: -66% !important;
+    margin-right: -66% ;
 }
 
 .homecart{
-    display: flex !important;
-    justify-content: space-evenly !important;
-    width: 500px !important;
-    list-style-type: none !important;
-    padding-left: 500px !important;
+    display: flex ;
+    justify-content: space-around ;
+    width: 500px ;
+    list-style-type: none ;
+    margin-left: 60%;
+    /* position: relative; */
+}
+
+.myNavBar{
+    width: 100%;
+    background-color: rgb(59, 56, 56);
+    display: flex;
+    height: 80px;
+    align-items: center;
+    position:fixed;
+    z-index: 10000%;
+    display: flex;
+
+}
+
+.cartSymbol{
+    display: flex;
+    margin-left: 10px;
+    align-items: center;
+    text-decoration: none;
+    font-size: large;
+}
+
+
+.cartIcon{
+    margin-left: 10px;
+}
+
+.brandName{
+    height: 52px;
+    width: 300px;
+    align-items: center;
+    text-decoration: none !important;
+    margin-left: 11px;
+    min-width: 200px;
+
+}
+
+.brandLink{
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 700;
+
+}
+
+.homeMenu{
+    text-decoration: none;
+    font-size: large;
+    padding: 3px;
+}
+
+.homeMenu:hover{
+    border:2px solid blue; 
+    border-radius: 10px;
+    padding: 10px;
+    
 }

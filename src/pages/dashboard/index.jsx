@@ -52,9 +52,9 @@ const Dashboard = () => {
   }
   
   return (
-    <div>
+    <div className='dashboardPage'>
       <Header />
-      {productData && <div style={{display:'flex' , justifyContent:'center'}}>
+      {productData && <div className='filterDiv' style={{display:'flex' , justifyContent:'center', color:'wheat'}}>
          <Dropdown text={'Filter By Category'} applyFilterFromDropdown={applyCategoryFilter} />
         <Dropdown text={'Filter By Model'} applyFilterFromDropdown={applymodelFilter} />
       </div>}
