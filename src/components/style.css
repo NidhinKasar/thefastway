@@ -31,6 +31,7 @@
     align-items: center;
     text-decoration: none;
     font-size: large;
+    color: aliceblue;
 }
 
 
@@ -52,13 +53,14 @@
     text-decoration: none;
     font-size: 30px;
     font-weight: 700;
-
+    color: aliceblue;
 }
 
 .homeMenu{
     text-decoration: none;
     font-size: large;
     padding: 3px;
+    color: aliceblue;
 }
 
 .homeMenu:hover{

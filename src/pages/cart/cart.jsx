@@ -1,23 +1,24 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import Header from '../../components/header'
-import { useDispatch } from 'react-redux'
+import React from 'react';
+import Header from '../../components/header';
+import { useDispatch } from 'react-redux';
+import { cart } from '../../store/cartReducer';
+
 
 function Cart() {
 
     const dispatch = useDispatch()
     const clearCart = () => {
         localStorage.setItem('cartItem', 0)
-        dispatch({
-            type: 'cart',
-            payload: 0
-        })
+        dispatch(cart({
+            payload: 0,
+            type: 'market/cart'
+        }))
   }
 
   return (
       <div>
           <Header />   
-          <Button style={{marginLeft:'50%', marginTop: '10%'}} onClick={clearCart} >Clear Cart</Button>
+          <button style={{marginLeft:'50%', marginTop: '10%'}} onClick={clearCart} >Clear Cart</button>
     </div>
   )
 }
