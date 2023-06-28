@@ -6,15 +6,18 @@ export default function ProductCards({ item, onClick, buyNow, key }) {
     
     const navigate = useNavigate();
 
-    const Clicked = (props) => {
-        localStorage.setItem('productData', JSON.stringify(props))
-        navigate('/product')
+  const Clicked = (props, event) => {
+    if (event.target.tagName !== 'BUTTON') {
+       localStorage.setItem('productData', JSON.stringify(props))
+       navigate('/product')
+    }
+      console.log(event.target.tagName);
+        
     }
     
-    console.log(item)
 
     return (
-      <div className="product-card" onClick={()=> Clicked(item)}>
+      <div className="product-card" onClick={(event)=> Clicked(item, event)}>
         <img src={item.thumbnail} alt="Product 1" className="product-image" />
             <h3 className="product-title">{item.title}</h3>
             <p className="product-description">{item.description}</p>
